@@ -3,6 +3,10 @@
 Automatically verify that certain test files **fail** to pass TypeScript type
 checks.
 
+This package checks the output from TypeScript's compiler (with the `--pretty`
+flag expected to be false) and ensures that it matches with the line numbers you
+specify.
+
 ## Usage
 
 ### As a module
@@ -22,7 +26,7 @@ const assertions = {
     'test/type-test-two.ts': [31, 39, '45-51'],
 };
 
-exec('tsc', (err, stdout) => {
+exec('tsc --pretty false', (err, stdout) => {
     assertTypeScriptErrors(stdout, assertions).catch(console.error);
 });
 ```
@@ -30,5 +34,6 @@ exec('tsc', (err, stdout) => {
 ### From the command line
 
 ```sh
-tsc | assert-ts-errors
+echo '{ "type-test.ts": [29, "56-60"] }' > assertions.json
+tsc --pretty false | assert-ts-errors assertions.json
 ```
