@@ -29,7 +29,7 @@ export function parse(whitelist: ExpectedErrors) {
                     const [start, end] = line
                         .split('-', 2)
                         .map(n => parseInt(n, 10));
-                    if (Number.isNaN(start) || Number.isNaN(end)) {
+                    if (isNaN(start) || isNaN(end)) {
                         throw new TypeError(`Invalid range ${line}`);
                     }
 

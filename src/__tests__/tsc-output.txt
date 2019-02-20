@@ -1,0 +1,27 @@
+# Taken from idb package
+test/type-test.ts(29,23): error TS2345: Argument of type '"not real"' is not assignable to parameter of type '"key-val-store" | "object-store" | ("key-val-store" | "object-store")[]'.
+test/type-test.ts(31,23): error TS2345: Argument of type '("key-val-store" | "not-real")[]' is not assignable to parameter of type '"key-val-store" | "object-store" | ("key-val-store" | "object-store")[]'.
+  Type '("key-val-store" | "not-real")[]' is not assignable to type '("key-val-store" | "object-store")[]'.
+    Type '"key-val-store" | "not-real"' is not assignable to type '"key-val-store" | "object-store"'.
+      Type '"not-real"' is not assignable to type '"key-val-store" | "object-store"'.
+test/type-test.ts(39,18): error TS2345: Argument of type '"not-real"' is not assignable to parameter of type '"key-val-store" | "object-store"'.
+test/type-test.ts(45,19): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange'.
+test/type-test.ts(46,22): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(47,26): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(48,22): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange'.
+test/type-test.ts(49,21): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(50,26): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(51,29): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(57,13): error TS2345: Argument of type '"213"' is not assignable to parameter of type 'number'.
+test/type-test.ts(58,13): error TS2345: Argument of type '"213"' is not assignable to parameter of type 'number'.
+test/type-test.ts(74,20): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange | undefined'.
+test/type-test.ts(75,30): error TS2345: Argument of type '123' is not assignable to parameter of type 'string | IDBKeyRange'.
+test/type-test.ts(91,24): error TS2345: Argument of type '"foo"' is not assignable to parameter of type '"date"'.
+test/type-test.ts(92,18): error TS2345: Argument of type '"foo"' is not assignable to parameter of type '"date"'.
+test/type-test.ts(97,19): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange'.
+test/type-test.ts(98,22): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange | undefined'.
+test/type-test.ts(99,26): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange | undefined'.
+test/type-test.ts(100,22): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange'.
+test/type-test.ts(101,21): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange | undefined'.
+test/type-test.ts(102,26): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange | undefined'.
+test/type-test.ts(103,29): error TS2345: Argument of type '123' is not assignable to parameter of type 'Date | IDBKeyRange | undefined'.

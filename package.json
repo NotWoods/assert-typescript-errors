@@ -16,8 +16,8 @@
     "scripts": {
         "test": "jest",
         "build": "rollup -c && tsc --emitDeclarationOnly",
-        "lint": "tcs --noEmit && prettier --parser typescript \"src/**/*.{ts,tsx}\" --write",
-        "lint:check": "tcs --noEmit && prettier --parser typescript \"src/**/*.{ts,tsx}\" --check"
+        "lint": "tsc --noEmit && prettier --parser typescript \"src/**/*.{ts,tsx}\" --write",
+        "lint:check": "tsc --noEmit && prettier --parser typescript \"src/**/*.{ts,tsx}\" --check"
     },
     "dependencies": {},
     "devDependencies": {

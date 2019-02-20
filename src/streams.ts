@@ -21,7 +21,7 @@ export class Split extends Transform {
      * @param next is a callback function called when you finish working
      * with this chunk.
      */
-    transform(
+    _transform(
         chunk: Buffer | string,
         _encoding: string,
         next: (error?: Error | null) => void,
@@ -64,7 +64,7 @@ export class Split extends Transform {
      * If the file does not end in a newline, flush will output the
      * remaining this.soFar data from the last line.
      */
-    flush(done: (error?: Error | null) => void) {
+    _flush(done: (error?: Error | null) => void) {
         if (this.soFar) {
             this.push(this.soFar);
         }
@@ -89,11 +89,12 @@ export class AssertTypeScriptErrors extends Writable {
     }
 
     _write(
-        line: string,
+        line: Buffer | string,
         encoding: string,
         next: (error?: Error | null) => void,
     ) {
-        if (encoding !== 'utf8') {
+        line = line.toString();
+        if (encoding !== 'utf8' && encoding !== 'buffer') {
             next(new TypeError(`Wrong encoding ${encoding}`));
             return;
         }
@@ -129,7 +130,7 @@ export class AssertTypeScriptErrors extends Writable {
             let errorMessage = 'Some lines did not have a type error:';
             failedAssertionFiles.forEach(file => {
                 const lines = Array.from(this.copy[file]).join();
-                errorMessage += `  ${file}: ${lines}`;
+                errorMessage += `\n  ${file}: ${lines}`;
             });
             done(new Error(errorMessage));
         }
